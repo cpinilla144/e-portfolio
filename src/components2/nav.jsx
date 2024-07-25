@@ -1,14 +1,15 @@
-import react from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import LibraryLogo from "../assets/library.svg";
-import {link} from "react-router-dom";
+import Library from "../assets/Library.svg";
+import {Link} from "react-router-dom";
+import { faBars, faShoppingCart, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const nav = ({numberOfItems}) => {
-  function openmenu() {
+  function openMenu() {
     document.body.classList += "menu--open";
   }
 
-  function closemenu() {
+  function closeMenu() {
     document.body.classList.remove("menu--open");
   }
 
@@ -16,9 +17,9 @@ const nav = ({numberOfItems}) => {
     <nav>
       <div className="nav__container">
         <Link to="/">
-          <img src={librarylogo} alt="" className="logo" />
+          <img src={Library} alt="" className="logo" />
         </Link>
-        <ul clLinkssName="nav__links">
+        <ul className="nav__links">
           <li className="nav__list">
             <Link to="/" className="nav__link">
               Home
@@ -30,12 +31,12 @@ const nav = ({numberOfItems}) => {
             </Link>
           </li>
 
-          <button className="btn__menu" onClick={openmenu}>
-            <fontAwesomeIcon icon="bars" />
+          <button className="btn__menu" onClick={openMenu}>
+            <FontAwesomeIcon icon={faBars} />
           </button>
           <li className="nav__icon">
             < Link to="/cart" className="nav__link">
-              <fontAwesomeIcon icon="shoppping-cart" />
+            <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
             {
               numberOfItems > 0 && <span className="cart__length">{numberOfItems}</span>
@@ -44,8 +45,8 @@ const nav = ({numberOfItems}) => {
           </li>
         </ul>
         <div className="menu__backdrop">
-          <button className="btn__menu btn__menu--close" onClick={closemenu}>
-            <fontAwesomeIcon icon="times" />
+          <button className="btn__menu btn__menu--close" onClick={closeMenu}>
+          <FontAwesomeIcon icon={faTimes} />
           </button>
           <ul className="menu__links">
             <li className="menu__list">

@@ -1,7 +1,7 @@
-import react from 'react';
-import undrawbooks from '../assets/undraw_books.svg'
-
-const landing = () => {
+import React from 'react';
+import UndrawBooks from '../assets/Undraw_Books.svg'
+import { Link } from 'react-router-dom';
+const Landing = () => {
 <section id="landing">
     <header>
         <div className="header__container">
@@ -13,7 +13,7 @@ const landing = () => {
                 </Link>
             </div>
             <figure className="header__img--wrapper">
-                <img src="../assets/undraw__books.svg" alt=""/>
+                <img src={UndrawBooks} alt=""/>
             </figure>
         </div>
     </header>
@@ -22,4 +22,4 @@ const landing = () => {
 
 }
 
-export default landing;
+export default Landing;

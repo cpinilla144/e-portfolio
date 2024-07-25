@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Price from "./ui/Price";
-import Ratings from "./ui/Ratings";
+import Rating from "./ui/Rating";
 
 const Book = ({ book }) => {
   const [img, setImg] = useState();
 
-  // When we switch routes dont set image to unmounted component
   const mountedRef = useRef(true);
 
   useEffect(() => {
@@ -20,7 +19,6 @@ const Book = ({ book }) => {
       }, 300);
     };
     return () => {
-      // When the component unmounts 
       mountedRef.current = false;
     };
   }, [book.url]);
@@ -46,7 +44,7 @@ const Book = ({ book }) => {
               {book.title}
             </Link>
           </div>
-          <Ratings rating={book.rating} />
+          <Rating rating={book.rating} />
           <Price
             originalPrice={book.originalPrice}
             salePrice={book.salePrice}

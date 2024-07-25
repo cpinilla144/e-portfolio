@@ -1,6 +1,9 @@
-import react from "react";
 
-const highlight = ([icon, title, para]) => {
+import React from 'react';
+
+
+const Highlight = ({ icon, title, para }) => {
+  console.log(icon,title,para)
   return (
     <div className="highlight">
       <div className="highlight__img">{icon}</div>
@@ -10,4 +13,4 @@ const highlight = ([icon, title, para]) => {
   );
 };
 
-export default highlight;
+export default Highlight;

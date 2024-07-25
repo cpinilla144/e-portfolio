@@ -1,11 +1,10 @@
-import react from "react";
-import book from "./ui/book";
+import React from "react";
+import Book from "./ui/Book";
 import { books } from "../data";
 
-const featured = () => {
+const Featured = () => {
   console.log(books);
   console.log(books.filter((book) => book.rating === 5).slice(0, 4));
-  function getfivestarbooks() {}
   return (
     <section id="features">
       <div className="container">
@@ -26,4 +25,4 @@ const featured = () => {
     </section>
   );
 };
-export default featured;
+export default Featured;

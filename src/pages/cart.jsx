@@ -1,11 +1,12 @@
-import react, { useEffect, useState } from "react";
-import EmptyCart from "../assets/empty__cart.svg";
+import React, { useEffect, useState } from "react";
+import EmptyCart from "../assets/empty_cart.svg";
+import { Link } from "react-router-dom";
 
 const cart = ({ cart, changeQuantity, removeItem }) => {
   const total = () => {
     let price = 0;
     cart.forEach((item) => {
-      price += +((item.saleprice || item.originalPrice) * item.quantity);
+      price += +((item.salePrice || item.originalPrice) * item.quantity);
     });
     return price;
   };
@@ -72,9 +73,9 @@ const cart = ({ cart, changeQuantity, removeItem }) => {
                   );
                 })}
               </div>
-              {cart.lenght === 0 && (
+              {cart.length=== 0 && (
                 <div className="cart__empty">
-                  <img src={Emptycart} alt="" className="cart__empty--img" />
+                  <img src={EmptyCart} alt="" className="cart__empty--img" />
                   <h2>You don't have any books in your cart!</h2>
                   <Link to="/books">
                     <button className="btn">Browse Books</button>

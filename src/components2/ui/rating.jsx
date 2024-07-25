@@ -1,15 +1,16 @@
-import react from 'react';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const rating = ({rating}) => {
+const Rating = ({rating}) => {
     return (
         <div className="book_ratings">
    
-        {new Array (math.floor(rating)).fill(0).map((_, index) => <FontawesomeIcon icon="star" key={index} />
+        {new Array (Math.floor(rating)).fill(0).map((_, index) => <FontAwesomeIcon icon="star" key={index} />
        )}
-        { !Number.isInteger(rating) && (<FontawesomeIcon icon="star-half-alt" />
+        { !Number.isInteger(rating) && (<FontAwesomeIcon icon="star-half-alt" />
        )}
       </div>
         
     );
 };
-export default rating;
+export default Rating;
